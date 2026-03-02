@@ -1,6 +1,6 @@
 {
-  "buildCommand": "npm run build:vercel",
-  "installCommand": "npm install",
+  "buildCommand": "npm --prefix frontend run build",
+  "installCommand": "npm install && npm --prefix frontend install",
   "framework": "nextjs",
   "functions": {
     "backend/api/**/*.js": {
