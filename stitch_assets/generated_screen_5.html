@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>The Timeless Collection - Premium Retro 3D Cars</title>
+<!-- Font Loading -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS v3 with Plugins -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Tailwind Configuration for Custom Theme -->
+<script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: '#ec6d13',
+            deepTeal: '#051c1c',
+            chrome: '#a8a8a8',
+          },
+          fontFamily: {
+            sans: ['Space Grotesk', 'sans-serif'],
+            serif: ['Georgia', 'serif'], // Fallback for retro serif feel
+          },
+          borderRadius: {
+            'custom': '8px',
+          },
+          backgroundImage: {
+            'leather-grain': "url('https://www.transparenttextures.com/patterns/leather.png')",
+          }
+        }
+      }
+    }
+  </script>
+<!-- BEGIN: Custom Styles -->
+<style data-purpose="background-effects">body {
+    background-color: #051c1c;
+    /* Deep Teal */
+    background-image: url(https://lh3.googleusercontent.com/aida-public/AB6AXuBAxPa1uhfGYVok7zVT7yHntDQfVPd6lj6-oBPsXjeKDvN-USUfTEW-dpw4lFFgheLWGdjanKjQj1M_NQvjQnuCRFoxTpdheYTBd8F_hhljruMgs_0-pOI8ofL_fCJMA0dLjNX319TCiSCmJXyl8N14wTo4eJljggXhpk53JH2Z7v62lrZrsg0TzunJ7qTYijBq7BXBm4mQcP06FXp-SyZ_Cw2rQMih6-arkuH980Q4_BBKeuueuuKehDuvaWHXV4DRwIrrwzJWXhI);
+    /* Subtle leather grain */
+    color: #fff;
+    min-height: 100vh
+    }
+.chrome-divider {
+    height: 1px;
+    background: linear-gradient(90deg, transparent, #a8a8a8, transparent);
+    opacity: 0.3
+    }</style>
+<style data-purpose="card-3d-glow">
+    /* Glassmorphism and 3D Card Effects */
+    .car-card {
+      background: rgba(255, 255, 255, 0.03);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1);
+      transform-style: preserve-3d;
+      perspective: 1000px;
+    }
+
+    .car-card:hover {
+      transform: translateY(-10px) rotateX(2deg) rotateY(2deg);
+      border-color: #ec6d13;
+      box-shadow: 0 0 25px rgba(236, 109, 19, 0.4);
+    }
+
+    .car-card img {
+      transition: transform 0.6s ease;
+    }
+
+    .car-card:hover img {
+      transform: translateZ(30px) scale(1.05);
+    }
+
+    /* Scroll Animation Utility */
+    .reveal {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: all 0.8s ease-out;
+    }
+
+    .reveal.active {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  </style>
+<!-- END: Custom Styles -->
+</head>
+<body class="font-sans">
+<!-- BEGIN: MainHeader -->
+<header class="py-16 px-6 text-center relative overflow-hidden" data-purpose="main-header">
+<div class="max-w-7xl mx-auto">
+<h1 class="text-5xl md:text-7xl font-serif font-bold tracking-widest text-white uppercase mb-4" style="letter-spacing: 0.15em;">
+        The Timeless Collection
+      </h1>
+<div class="chrome-divider w-1/3 mx-auto mb-6"></div>
+<p class="text-chrome font-light uppercase tracking-[0.4em] text-sm">Curated Vintage Excellence</p>
+</div>
+</header>
+<!-- END: MainHeader -->
+<!-- BEGIN: GallerySection -->
+<main class="max-w-7xl mx-auto px-6 pb-24" data-purpose="car-gallery">
+<!-- Grid Container -->
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+<!-- Card 1: 1969 Charger -->
+<article class="car-card reveal rounded-custom overflow-hidden flex flex-col group" data-purpose="car-item">
+<div class="relative h-64 overflow-hidden">
+<img alt="1969 Charger" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBerFQ1fvO95sAlQjUoBoUpxKVe8XvHpuifdM7XH2Ip0xuIUMrtWJH6RA1-FWUy3iG2ObZlEgLPKr4EAFD9qtqdQo3fbiq1Q_Myj3SbLh-8vPX-HJ-dFK5iRt76MP-rpJLhdmPh1OoqJ4ltY-QbUKrv3duCxhmllEZPNU1L7D2jJf9d6hS731xXfloAB4cl81Pp_Ylutqd85w6t_-fv3MAgUTHYRQT-WPZAsT0kl740PXAytgIJGzBRKGcgPrKAuNGnWpFAWX0-xeE"/>
+<div class="absolute inset-0 bg-gradient-to-t from-deepTeal to-transparent opacity-60"></div>
+</div>
+<div class="p-6">
+<span class="text-primary font-bold text-xs tracking-widest uppercase">1969</span>
+<h2 class="text-2xl font-semibold mt-1 group-hover:text-primary transition-colors">Dodge Charger</h2>
+<div class="mt-4 flex justify-between items-center">
+<button class="px-4 py-2 border border-chrome/30 rounded-custom text-xs uppercase tracking-widest hover:bg-primary hover:border-primary transition-all">View Details</button>
+</div>
+</div>
+</article>
+<!-- Card 2: Porsche 911 -->
+<article class="car-card reveal rounded-custom overflow-hidden flex flex-col group" data-purpose="car-item">
+<div class="relative h-64 overflow-hidden">
+<img alt="Classic Porsche 911" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDNOVMU4stKtSoWETUr50H2KpRmTzTfKgLjSbvSEn0tyOXgIGuiePje3vlpVSDTxg0weTxlhsg9EAVCxDvJgwtBE0IpI2biSxPU0dT_oqV9-YrwJBq5jW3V4IzVkhM7nesGbFcZ36S0lVUvmre-_Pu23rJ5X0hbHpdXTZ0DjVByDfbL3gzx-5HaEt3lu23dnwlo8OYTwvCj4ZjdQy7vp6yhzJVyHJ3z3cO_oX31AleYQ7QrbgAL4CFJHf99gtMucAgmEMsuxTWOT6Y"/>
+<div class="absolute inset-0 bg-gradient-to-t from-deepTeal to-transparent opacity-60"></div>
+</div>
+<div class="p-6">
+<span class="text-primary font-bold text-xs tracking-widest uppercase">1974</span>
+<h2 class="text-2xl font-semibold mt-1 group-hover:text-primary transition-colors">Porsche 911 Carrera</h2>
+<div class="mt-4 flex justify-between items-center">
+<button class="px-4 py-2 border border-chrome/30 rounded-custom text-xs uppercase tracking-widest hover:bg-primary hover:border-primary transition-all">View Details</button>
+</div>
+</div>
+</article>
+<!-- Card 3: Jaguar E-Type -->
+<article class="car-card reveal rounded-custom overflow-hidden flex flex-col group" data-purpose="car-item">
+<div class="relative h-64 overflow-hidden">
+<img alt="Vintage Jaguar" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAA11T9zLAJzl4VjvBs5QPXNo4jyqYT-739ywMJLNb2BsUZBXmg6Bq-NelTdDSYxjGClhmjlxlXOtBwi9Avnfl9jkpaUhOGkJKXYWyNj9rK9G7Dl2867vW9qJO6TDHTfYmoPxNPg-d7ar1Hgxl18ldJCLikW3LGj7axzZ1FVZPeEvDsIvwg1SEFNhcpAP99t090migvswtraUkKmmmgnUGvmFqjXGjkIsXkjyu3CZYUo586l3dz6PQ6abq3scmbjlX2GZ88Ar3RBGk"/>
+<div class="absolute inset-0 bg-gradient-to-t from-deepTeal to-transparent opacity-60"></div>
+</div>
+<div class="p-6">
+<span class="text-primary font-bold text-xs tracking-widest uppercase">1961</span>
+<h2 class="text-2xl font-semibold mt-1 group-hover:text-primary transition-colors">Jaguar E-Type</h2>
+<div class="mt-4 flex justify-between items-center">
+<button class="px-4 py-2 border border-chrome/30 rounded-custom text-xs uppercase tracking-widest hover:bg-primary hover:border-primary transition-all">View Details</button>
+</div>
+</div>
+</article>
+<!-- Card 4: Ford Mustang -->
+<article class="car-card reveal rounded-custom overflow-hidden flex flex-col group" data-purpose="car-item">
+<div class="relative h-64 overflow-hidden">
+<img alt="Classic Mustang" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCO9_w9Vf_k7DsODq_gsMgX-MqpsrVTlEhxsPsCYMttchQEabwAGwkQkELP0TtKQICugFjruWVXANWUN6jvMBXal3sr5TBoOC0BbI7RdnO9BXreUUPIGYK980wspWTWp-pGZbjRw6f0zDJ7jvC017KB3Z7imJ2HxyuuZVFaAhDUk78fCNEZsU_ZE9lB4Y8guHo9Z4Ju8ABgJ-3Nb3m4mA8V6gSNSxvBEkkUqlJoC-n1WxwiKabl475bbLElMkKIHOBFDcL4uatDkG0"/>
+<div class="absolute inset-0 bg-gradient-to-t from-deepTeal to-transparent opacity-60"></div>
+</div>
+<div class="p-6">
+<span class="text-primary font-bold text-xs tracking-widest uppercase">1967</span>
+<h2 class="text-2xl font-semibold mt-1 group-hover:text-primary transition-colors">Ford Mustang GT</h2>
+<div class="mt-4 flex justify-between items-center">
+<button class="px-4 py-2 border border-chrome/30 rounded-custom text-xs uppercase tracking-widest hover:bg-primary hover:border-primary transition-all">View Details</button>
+</div>
+</div>
+</article>
+<!-- Card 5: Ferrari 250 GTO -->
+<article class="car-card reveal rounded-custom overflow-hidden flex flex-col group" data-purpose="car-item">
+<div class="relative h-64 overflow-hidden">
+<img alt="Vintage Ferrari" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBsotIZDzapzt2bW20rlm_dcOzi8avP1GPFmRlUIqGCER6Z5SwhnMPUZg5nsfqbbrCaA-9MHVXubaVbuVvCQYmdqfPLIu10dgm-YM1LTgOqsVBretmE0XaPTlbgwZcgwUDIJ8GMEMl1rqTaKPxS44oF-YxCoR0hUWjfnjkAYNd5ZfWAeFkX56DaOGk5YfGaHfenDsyANX0xVThSuez3iLNf1BN1oKcmTgJqpoXzd_zbWDCzN1QTNGxWwr0rmBeECHnUSsmgIhIeGjs"/>
+<div class="absolute inset-0 bg-gradient-to-t from-deepTeal to-transparent opacity-60"></div>
+</div>
+<div class="p-6">
+<span class="text-primary font-bold text-xs tracking-widest uppercase">1962</span>
+<h2 class="text-2xl font-semibold mt-1 group-hover:text-primary transition-colors">Ferrari 250 GTO</h2>
+<div class="mt-4 flex justify-between items-center">
+<button class="px-4 py-2 border border-chrome/30 rounded-custom text-xs uppercase tracking-widest hover:bg-primary hover:border-primary transition-all">View Details</button>
+</div>
+</div>
+</article>
+<!-- Card 6: Chevrolet Corvette -->
+<article class="car-card reveal rounded-custom overflow-hidden flex flex-col group" data-purpose="car-item">
+<div class="relative h-64 overflow-hidden">
+<img alt="Vintage Corvette" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBd9ujwnEJP3kg5wm7kiz7jUNKlHlVHULbd3a-GgDkKVCkDjYpLPUqh6a-oqjBfvzNNyYMYJbqfSftMoU6MP8Fw_leV0rAwRlCJpoOQY4s5C4_80ifSPWpO8NAu0pM9p35CBjQLBOw7tUnX88ZQ9x3ldVrGVGRUa8YM6qQok4pd4m9p6q8iYLYS4vJiBHkC4ER8nkaIPF7WDS3x1XnW2OQObxpwuVwgLJEzjI1pktnw0sipBSlddwRU6jjk_ah2I1aOb8UrZMtBNbU"/>
+<div class="absolute inset-0 bg-gradient-to-t from-deepTeal to-transparent opacity-60"></div>
+</div>
+<div class="p-6">
+<span class="text-primary font-bold text-xs tracking-widest uppercase">1963</span>
+<h2 class="text-2xl font-semibold mt-1 group-hover:text-primary transition-colors">Corvette Sting Ray</h2>
+<div class="mt-4 flex justify-between items-center">
+<button class="px-4 py-2 border border-chrome/30 rounded-custom text-xs uppercase tracking-widest hover:bg-primary hover:border-primary transition-all">View Details</button>
+</div>
+</div>
+</article>
+</div>
+</main>
+<!-- END: GallerySection -->
+<!-- BEGIN: Footer -->
+<footer class="py-12 border-t border-chrome/10" data-purpose="main-footer">
+<div class="max-w-7xl mx-auto px-6 text-center">
+<p class="text-chrome/50 text-xs tracking-widest uppercase">© 2023 Timeless Automotive Archive | Powered by 3D Engine v2.0</p>
+</div>
+</footer>
+<!-- END: Footer -->
+<!-- BEGIN: Scripts -->
+<script data-purpose="scroll-animations">
+    // Intersection Observer for reveal animations
+    const revealElements = document.querySelectorAll('.reveal');
+    
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('active');
+        }
+      });
+    }, {
+      threshold: 0.1
+    });
+
+    revealElements.forEach(el => observer.observe(el));
+  </script>
+<script data-purpose="card-tilt-interaction">
+    // Subtle mouse tracking for card tilt
+    const cards = document.querySelectorAll('.car-card');
+    
+    cards.forEach(card => {
+      card.addEventListener('mousemove', (e) => {
+        const rect = card.getBoundingClientRect();
+        const x = e.clientX - rect.left;
+        const y = e.clientY - rect.top;
+        
+        const centerX = rect.width / 2;
+        const centerY = rect.height / 2;
+        
+        const rotateX = (y - centerY) / 20;
+        const rotateY = (centerX - x) / 20;
+        
+        card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateY(-10px)`;
+      });
+      
+      card.addEventListener('mouseleave', () => {
+        card.style.transform = `perspective(1000px) rotateX(0deg) rotateY(0deg) translateY(0)`;
+      });
+    });
+  </script>
+<!-- END: Scripts -->
+</body></html>

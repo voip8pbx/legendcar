@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>1967 Mustang | The Mechanical Soul</title>
+<!-- Google Fonts: Space Grotesk -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS with Plugins -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: '#ec6d13',
+            darkest: '#0a0a0a',
+            chrome: '#e5e7eb',
+          },
+          fontFamily: {
+            sans: ['Space Grotesk', 'sans-serif'],
+          },
+          borderRadius: {
+            'custom': '8px',
+          }
+        }
+      }
+    }
+  </script>
+<style data-purpose="custom-layout">body {
+    background-color: #0a0a0a;
+    color: #fff;
+    overflow-x: hidden;
+    font-family: "Space Grotesk", sans-serif
+    }
+.glow-orange {
+    text-shadow: 0 0 10px rgba(236, 109, 19, 0.7)
+    }
+.gauge-container {
+    background: radial-gradient(circle at center, #1a1a1a 0%, #000 100%);
+    border: 4px solid #333;
+    box-shadow: inset 0 0 15px rgba(0, 0, 0, 1), 0 0 5px rgba(236, 109, 19, 0.2)
+    }
+.needle {
+    transform-origin: bottom center;
+    transition: transform 2s cubic-bezier(0.4, 0, 0.2, 1)
+    }
+.paper-texture {
+    background-color: #d2b48c;
+    background-image: url(https://lh3.googleusercontent.com/aida-public/AB6AXuAKZ7nILWmtn-fIj4DxbNQ3eVAPPyRcctKaNJZf-slf9BUvBI-w5P17F9URbwdcK1XMjHFlO2w8tm874r5EvnH95ycThxEotanfiqlq3fXDngaNUWuP9kpfggMFRDSEwQzQNU_tR4epBA7ghjMjMZeiWUd7-wJ5oxgL-EDXemueD3407_Pu3kffc_1YLrTcF50-Mm3fIOO1EbcIGV3yVniheP7_bSHx7yHETYqlwmb_ja4JStTPvv3yUTZq5vvShiEAJCs651HEMUw);
+    color: #2d2d2d
+    }
+.car-canvas-gradient {
+    background: radial-gradient(circle at center, rgba(236, 109, 19, 0.05) 0%, transparent 70%)
+    }</style>
+</head>
+<body class="min-h-screen flex flex-col">
+<!-- BEGIN: MainHeader -->
+<header class="p-8 flex justify-between items-center z-50">
+<div class="flex items-center gap-4" data-purpose="brand-logo">
+<div class="w-10 h-10 border-2 border-brand rounded-custom flex items-center justify-center">
+<span class="text-brand font-bold">M</span>
+</div>
+<h1 class="text-3xl font-bold tracking-tighter uppercase italic">The Mechanical Soul</h1>
+</div>
+<nav class="hidden md:flex gap-8 text-sm uppercase tracking-widest text-zinc-400">
+<a class="hover:text-brand transition-colors" href="#">Showcase</a>
+<a class="hover:text-brand transition-colors" href="#">Heritage</a>
+<a class="hover:text-brand transition-colors" href="#">Registry</a>
+</nav>
+</header>
+<!-- END: MainHeader -->
+<main class="flex-grow flex flex-col lg:flex-row relative px-4 lg:px-12 pb-12 gap-8">
+<!-- BEGIN: LeftPanel - Dashboard Gauges -->
+<aside class="w-full lg:w-1/4 flex flex-col justify-center gap-8 order-2 lg:order-1" data-purpose="instrument-cluster">
+<!-- RPM Gauge -->
+<div class="gauge-container p-6 rounded-full w-48 h-48 mx-auto relative flex flex-col items-center justify-center border-zinc-700">
+<div class="absolute inset-0 flex items-center justify-center">
+<div class="w-1 h-20 bg-brand glow-orange needle rounded-full mb-20 rotate-[-45deg]" id="rpm-needle"></div>
+</div>
+<div class="z-10 text-center mt-12">
+<span class="block text-2xl font-bold italic">RPM</span>
+<span class="text-xs text-zinc-500 uppercase">x1000</span>
+</div>
+<!-- Gauge markings simplified -->
+<div class="absolute inset-4 border border-zinc-800 rounded-full border-dashed"></div>
+</div>
+<!-- Horsepower Display -->
+<div class="bg-zinc-900/50 p-6 rounded-custom border border-zinc-800 backdrop-blur-sm">
+<h3 class="text-brand text-xs uppercase tracking-widest mb-2 font-bold">Horsepower</h3>
+<div class="flex items-baseline gap-2">
+<span class="text-5xl font-black italic">320</span>
+<span class="text-zinc-500 font-bold">HP</span>
+</div>
+<div class="w-full bg-zinc-800 h-1 mt-4 rounded-full overflow-hidden">
+<div class="bg-brand h-full w-[80%] glow-orange"></div>
+</div>
+</div>
+<!-- Engine Specs -->
+<div class="bg-zinc-900/50 p-6 rounded-custom border border-zinc-800 backdrop-blur-sm">
+<h3 class="text-zinc-500 text-xs uppercase tracking-widest mb-4">Engine Specifications</h3>
+<div class="space-y-4">
+<div class="flex justify-between border-b border-zinc-800 pb-2">
+<span class="text-zinc-400">Configuration</span>
+<span class="font-bold">V8</span>
+</div>
+<div class="flex justify-between border-b border-zinc-800 pb-2">
+<span class="text-zinc-400">Displacement</span>
+<span class="font-bold">4.7L</span>
+</div>
+<div class="flex justify-between">
+<span class="text-zinc-400">Year</span>
+<span class="font-bold">1967</span>
+</div>
+</div>
+</div>
+</aside>
+<!-- END: LeftPanel -->
+<!-- BEGIN: CenterShowcase - 3D Car Model -->
+<section class="flex-grow flex flex-col items-center justify-center relative order-1 lg:order-2 py-12" data-purpose="car-3d-viewport">
+<div class="car-canvas-gradient absolute inset-0 -z-10"></div>
+<!-- Visual Placeholder for the 3D Car Model -->
+<div class="relative w-full max-w-4xl aspect-[16/9] flex items-center justify-center">
+<!-- Using a placeholder to represent the rotating car model -->
+<img alt="1967 Mustang 3D View" class="w-full h-auto object-contain drop-shadow-[0_20px_50px_rgba(236,109,19,0.3)]" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDY2PQ7Owt67TW1n7RB-qv5OEDGfvBoGzGvet6vcyWo4QbKHU4GQpYeAxyUD86SNeBU2e3FN2HSdw9agZxv0MJ3k3e4x5m5fSNqN43mY5-UTwCLa8u0Ncdwc1LqseK0OzZzoeQ8h-lbltw9-POAdjCVcC5_JyKRjYZH3wMQpxMt29k_QW9kxxkGwiNQFlZMlqSINq_oVywFqisKH6yNcBMVhYvcmzwbtqLWvK1tO8v-Y0g3OXVfl5Ub50NIT66WDMY7hhcgWSAhtHc"/>
+<!-- Interaction Prompt -->
+<div class="absolute bottom-4 left-1/2 -translate-x-1/2 flex items-center gap-2 text-zinc-500 text-xs uppercase tracking-[0.3em] animate-pulse">
+<svg class="h-4 w-4" fill="none" stroke="currentColor" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M7 16l-4-4m0 0l4-4m-4 4h18" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+          Drag to Rotate
+          <svg class="h-4 w-4" fill="none" stroke="currentColor" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M17 8l4 4m0 0l-4 4m4-4H3" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+</div>
+</div>
+<!-- Top Speed Indicator -->
+<div class="mt-8 flex items-center gap-12 bg-black/40 p-4 rounded-full border border-white/5 backdrop-blur-md">
+<div class="text-center">
+<p class="text-[10px] uppercase text-zinc-500 tracking-tighter">Current Speed</p>
+<p class="text-3xl font-black italic glow-orange">000</p>
+</div>
+<div class="h-8 w-px bg-zinc-800"></div>
+<div class="text-center">
+<p class="text-[10px] uppercase text-zinc-500 tracking-tighter">Top Speed</p>
+<p class="text-3xl font-black italic text-zinc-200">128</p>
+</div>
+</div>
+</section>
+<!-- END: CenterShowcase -->
+<!-- BEGIN: RightPanel - Legacy & Speedo -->
+<aside class="w-full lg:w-1/4 flex flex-col justify-center gap-8 order-3" data-purpose="legacy-and-speed">
+<!-- Vintage Speedometer Style Gauge -->
+<div class="gauge-container p-6 rounded-full w-48 h-48 mx-auto relative flex flex-col items-center justify-center border-zinc-700">
+<div class="absolute inset-0 flex items-center justify-center">
+<div class="w-1 h-20 bg-brand glow-orange needle rounded-full mb-20 rotate-[-90deg]" id="speedo-needle"></div>
+</div>
+<div class="z-10 text-center mt-12">
+<span class="block text-2xl font-bold italic">MPH</span>
+<span class="text-xs text-zinc-500 uppercase italic">Vintage Series</span>
+</div>
+</div>
+<!-- Legacy Story Section -->
+<article class="paper-texture p-6 rounded-custom shadow-2xl transform lg:rotate-2 hover:rotate-0 transition-transform duration-500" data-purpose="legacy-content">
+<h2 class="font-bold text-xl mb-3 uppercase tracking-tighter border-b border-black/10 pb-2">The Legacy</h2>
+<p class="text-sm leading-relaxed font-medium">
+          Born in the heat of Detroit's golden era, the 1967 Mustang wasn't just a car; it was a revolution. With its aggressive fastback lines and the raw roar of the 289-cubic-inch V8, it captured the essence of American freedom. This masterpiece represents the pinnacle of pony car design, blending sheer power with an unmistakable silhouette that still commands the asphalt decades later.
+        </p>
+<div class="mt-6 flex justify-between items-end">
+<div class="text-[10px] opacity-60 uppercase font-bold">Authentic Spec #0921</div>
+<button class="bg-black text-white px-4 py-2 rounded-custom text-xs uppercase font-bold hover:bg-brand transition-colors">
+            Full History
+          </button>
+</div>
+</article>
+<!-- Action Footer -->
+<div class="flex flex-col gap-3">
+<button class="w-full bg-brand hover:bg-orange-600 text-black font-black py-4 rounded-custom uppercase tracking-widest shadow-[0_0_20px_rgba(236,109,19,0.4)] transition-all">
+          Reserve Showcase
+        </button>
+<button class="w-full border border-zinc-700 hover:border-brand text-zinc-400 hover:text-brand font-bold py-4 rounded-custom uppercase tracking-widest transition-all">
+          Contact Curator
+        </button>
+</div>
+</aside>
+<!-- END: RightPanel -->
+</main>
+<!-- BEGIN: PageBackgroundEffects -->
+<div class="fixed bottom-0 left-0 w-full h-1/2 bg-gradient-to-t from-brand/5 to-transparent pointer-events-none -z-20"></div>
+<div class="fixed top-0 left-0 w-full h-full opacity-20 pointer-events-none -z-30" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDQ3DMm7sLihwcgQ3UroMu_8H2Wnl3TYoa0BG0Nz9QlduSRpuxF1mzGVi6FCobWjfNDY3UYVWLP23ykE5SA-Id41iHZxW4SHbjt6YSaxrAIzpcn6JS8jHz9WfkHLY0gs2N-jZqcffuyrdNs6mglmdlI9l8jouLz-f8uLkDRxVlYQk-_-b7CL8cvQenldVfOf7vP3jAGp6tnEtFtpv19PqAwsW7_XY7TN5MV8DIXayc76Y3kWDD9YfXbCuGGb9CG9D8y7p5sOFzZLak');"></div>
+<!-- END: PageBackgroundEffects -->
+<!-- BEGIN: InteractiveScripts -->
+<script data-purpose="gauge-animations">
+    // Simple script to simulate needle movement on load
+    window.addEventListener('DOMContentLoaded', () => {
+      const rpmNeedle = document.getElementById('rpm-needle');
+      const speedoNeedle = document.getElementById('speedo-needle');
+      
+      setTimeout(() => {
+        rpmNeedle.style.transform = 'rotate(35deg)';
+        speedoNeedle.style.transform = 'rotate(-10deg)';
+      }, 500);
+
+      // Random jitter effect for needles
+      setInterval(() => {
+        const jitter = (Math.random() - 0.5) * 2;
+        rpmNeedle.style.transform = `rotate(${35 + jitter}deg)`;
+      }, 100);
+    });
+  </script>
+<!-- END: InteractiveScripts -->
+</body></html>
