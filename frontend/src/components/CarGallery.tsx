@@ -10,12 +10,38 @@ interface Car {
 
 export default function CarGallery() {
     const [cars, setCars] = useState<Car[]>([]);
+    const [isLoading, setIsLoading] = useState(true);
+    const [error, setError] = useState<string | null>(null);
 
     useEffect(() => {
-        fetch('http://localhost:5000/api/cars')
-            .then(res => res.json())
-            .then(data => setCars(data))
-            .catch(err => console.error(err));
+        const fetchCars = async () => {
+            try {
+                setIsLoading(true);
+                const apiUrl = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:3000/api';
+                const response = await fetch(`${apiUrl}/cars`, {
+                    headers: {
+                        'Accept': 'application/json',
+                    }
+                });
+                
+                if (!response.ok) {
+                    throw new Error(`API Error: ${response.status}`);
+                }
+                
+                const result = await response.json();
+                const carsData = result.data || result || [];
+                setCars(Array.isArray(carsData) ? carsData : []);
+                setError(null);
+            } catch (err) {
+                console.error('Failed to fetch cars:', err);
+                setError(err instanceof Error ? err.message : 'Failed to load cars');
+                setCars([]);
+            } finally {
+                setIsLoading(false);
+            }
+        };
+
+        fetchCars();
     }, []);
 
     return (
@@ -30,7 +56,27 @@ export default function CarGallery() {
                 </div>
             </header>
             <main className="max-w-7xl mx-auto px-6 pb-24" data-purpose="car-gallery">
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+                {isLoading && (
+                    <div className="text-center py-12">
+                        <p className="text-chrome">Loading cars...</p>
+                    </div>
+                )}
+                
+                {error && (
+                    <div className="text-center py-12">
+                        <p className="text-red-500">Error loading cars: {error}</p>
+                        <p className="text-chrome text-sm mt-2">API URL: {process.env.NEXT_PUBLIC_API_URL || 'http://localhost:3000/api'}</p>
+                    </div>
+                )}
+                
+                {!isLoading && !error && cars.length === 0 && (
+                    <div className="text-center py-12">
+                        <p className="text-chrome">No cars available</p>
+                    </div>
+                )}
+                
+                {cars.length > 0 && (
+                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
                     {cars.map((car) => (
                         <article
                             key={car.id}
@@ -53,7 +99,8 @@ export default function CarGallery() {
                             </div>
                         </article>
                     ))}
-                </div>
+                    </div>
+                )}
             </main>
         </>
     );
