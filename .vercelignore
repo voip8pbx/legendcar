@@ -1,0 +1,47 @@
+# Vercel will ignore these files during build and deployment
+
+# Dependencies
+node_modules/
+.npm
+.eslintcache
+
+# Production builds
+build/
+dist/
+.next/
+
+# Environment
+.env
+.env.local
+.env.*.local
+
+# Testing
+.coverage/
+.nyc_output/
+
+# IDE and editor
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Git
+.git/
+.gitattributes
+
+# CI/CD
+.github/
+.gitlab-ci.yml
+
+# Documentation
+*.md
+!README.md
+
+# Development
+nodemon.json
+stitch_assets/
