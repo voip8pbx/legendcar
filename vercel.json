@@ -3,16 +3,6 @@
   "installCommand": "npm install && cd frontend && npm install && cd ../backend && npm install",
   "outputDirectory": "frontend/.next",
   "framework": "nextjs",
-  "env": {
-    "NEXT_PUBLIC_API_URL": {
-      "description": "API base URL for frontend (e.g., https://your-domain.vercel.app/api)",
-      "required": true
-    },
-    "NODE_ENV": {
-      "description": "Node environment",
-      "value": "production"
-    }
-  },
   "functions": {
     "backend/api/**/*.js": {
       "runtime": "nodejs20.x",
@@ -29,13 +19,6 @@
     {
       "src": "/(.*)",
       "dest": "/$1"
-    }
-  ],
-  "redirects": [],
-  "rewrites": [
-    {
-      "source": "/api/:path*",
-      "destination": "/api/:path*"
     }
   ]
 }
