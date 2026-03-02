@@ -1,6 +1,7 @@
 {
-  "buildCommand": "npm --prefix frontend run build",
-  "installCommand": "npm install && npm --prefix frontend install",
+  "root": "frontend",
+  "buildCommand": "npm run build",
+  "installCommand": "npm install",
   "framework": "nextjs",
   "functions": {
     "backend/api/**/*.js": {
